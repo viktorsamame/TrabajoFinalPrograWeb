@@ -3,7 +3,7 @@
 	
 	<head>
 		<meta charset="UTF-8"></meta>
-		<title>Mascota</title>
+		<title>Reserva</title>
 		
 		<script type="text/javascript"
 				src="ajax.aspnetcdn.com/ajax/jquery.validate/1.16.0/jquery.validate.js">
@@ -25,39 +25,46 @@
 		<div th:replace="fragments/header :: header"></div>
 		
 		<div class="container">
-			<form th:action="@{/pet/registrar}" method="post" th:object="${pet}">
+			<form th:action="@{/reserva/registrar}" method="post" th:object="${reserva}">
 				<div class="form-group">
-					<label for="idpet">ID:</label>
-					<input type="text" class="form-control" th:field="*{idPet}"></input>
+					<label for="idreserva">ID:</label>
+					<input type="text" class="form-control" th:field="*{idReserva}"></input>
 					
 				<div class="form-group">
 					<label for="nombre">NOMBRE::</label>
-					<input type="text" class="form-control" th:field="*{namePet}" id="namePet"></input>
+					<input type="text" class="form-control" th:field="*{nombreReserva}" id="nombreReserva" maxlength="30"></input>
 					
-					<div class="alert alert-danger" th:if="${#fields.hasErrors('namePet')}" 
-							th:errors="*{namePet}">						
+					<div class="alert alert-danger" th:if="${#fields.hasErrors('nombreReserva')}" 
+							th:errors="*{nombreReserva}">						
 					</div>
 					
-					<label for="fechaNacimiento">FECHA NACIMIENTO:</label>
-					<input type="date" class="form-control" th:field="*{birthDatePet}" id="fechaNacimiento"></input>
+					<label for="numeroparticipantes">Numero de Participantes:</label>
+					<input type="text" class="form-control" th:field="*{numParticipantes}" id="numeroparticipantes" maxlength="2"></input>
 					
-					<div class="alert alert-danger" th:if="${#fields.hasErrors('birthDatePet')}" 
-							th:errors="*{birthDatePet}">						
+					<div class="alert alert-danger" th:if="${#fields.hasErrors('numParticipantes')}" 
+							th:errors="*{numParticipantes}">						
 					</div>
 						
-					<label for="raza" class= "col-sm-2 col-form-label">Raza:</label>
-					<select class="form-control" th:field="*{race.idRace}"> 
-						<option th:each= "r:${listaRazas}" th:value="${r.idRace}"
-							 	th:text="${r.nameRace}"
-							 	th:selected="(${r.idRace} == *{race.idRace})">
+					<label for="fechaReserva">FECHA :</label>
+					<input type="date" class="form-control" th:field="*{fechaReserva}" id="fechaReserva"></input>
+					
+					<div class="alert alert-danger" th:if="${#fields.hasErrors('fechaReserva')}" 
+							th:errors="*{fechaReserva}">
+					</div>		
+									
+					<label for="turista" class= "col-sm-2 col-form-label">Turista:</label>
+					<select class="form-control" th:field="*{turista.idTurista}"> 
+						<option th:each= "t:${listaTuristas}" th:value="${t.idTurista}"
+								th:text="${t.nombreTurista}"
+							 	th:selected="(${t.idTurista} == *{turista.idTurista})">
 						</option>
 					</select>	
 					
-					<label for="dueno" class= "col-sm-2 col-form-label">Propietario:</label>
-					<select class="form-control" th:field="*{dueno.idDueno}"> 
-						<option th:each= "d:${listaDuenos}" th:value="${d.idDueno}"
-							 	th:text="${d.nameDueno}"
-							 	th:selected="(${d.idDueno} == *{dueno.idDueno})">
+					<label for="paquete" class= "col-sm-2 col-form-label">Paquete:</label>
+					<select class="form-control" th:field="*{paquete.idPaquete}"> 
+						<option th:each= "p:${listaPaquetes}" th:value="${p.idPaquete}"
+								th:text="${p.nombrePaquete}"
+							 	th:selected="(${p.idPaquete} == *{paquete.idPaquete})">
 						</option>
 					</select>	
 						
@@ -66,7 +73,7 @@
 			</div>
 				
 				<button type="submit" class="btn btn-primary">Aceptar</button>
-				<a href="/pet/listar" class="btn btn-danger">Cancelar</a>
+				<a href="/reserva/listar" class="btn btn-danger">Cancelar</a>
 				
 			</form>
 		</div>

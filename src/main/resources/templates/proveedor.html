@@ -3,7 +3,7 @@
 	
 	<head>
 		<meta charset="UTF-8"></meta>
-		<title>Propietario</title>
+		<title>Proveedor</title>
 		
 		<script type="text/javascript"
 				src="ajax.aspnetcdn.com/ajax/jquery.validate/1.16.0/jquery.validate.js">
@@ -25,17 +25,38 @@
 		<div th:replace="fragments/header :: header"></div>
 		
 		<div class="container">
-			<form th:action="@{/dueno/registrar}" method="post" th:object="${dueno}">
+			<form th:action="@{/proveedor/registrar}" method="post" th:object="${proveedor}">
 				<div class="form-group">
-					<label for="iddueno">ID:</label>
-					<input type="text" class="form-control" th:field="*{idDueno}"></input>
+					<label for="idproveedor">ID:</label>
+					<input type="text" class="form-control" th:field="*{idProveedor}"></input>
 					
 					<div class="form-group">
 						<label for="nombre">Nombre:</label>
-						<input type="text" class="form-control" th:field="*{nameDueno}" id="nombre"></input>
+						<input type="text" class="form-control" th:field="*{nombreProveedor}" id="nombre" maxlength="30"></input>
 						
-						<div class="alert alert-danger" th:if="${#fields.hasErrors('nameDueno')}" 
-							th:errors="*{nameDueno}">						
+						<div class="alert alert-danger" th:if="${#fields.hasErrors('nombreProveedor')}" 
+							th:errors="*{nombreProveedor}">						
+						</div>
+						
+						<label for="apellido">Apellidos:</label>
+						<input type="text" class="form-control" th:field="*{apellidoProveedor}" id="apellido" maxlength="30"></input>
+						
+						<div class="alert alert-danger" th:if="${#fields.hasErrors('apellidoProveedor')}" 
+							th:errors="*{apellidoProveedor}">						
+						</div>
+						
+						<label for="ruc">RUC:</label>
+						<input type="text" class="form-control" th:field="*{rucProveedor}" id="ruc" maxlength="11"></input>
+						
+						<div class="alert alert-danger" th:if="${#fields.hasErrors('rucProveedor')}" 
+							th:errors="*{rucProveedor}">						
+						</div>
+						
+						<label for="telefono">Telefono</label>
+						<input type="text" class="form-control" th:field="*{telefonoProveedor}" id="telefono" maxlength="9"></input>
+						
+						<div class="alert alert-danger" th:if="${#fields.hasErrors('telefonoProveedor')}" 
+							th:errors="*{telefonoProveedor}">						
 						</div>
 						
 					</div>
@@ -43,7 +64,7 @@
 				</div>
 				
 				<button type="submit" class="btn btn-primary">Aceptar</button>
-				<a href="/dueno/listar" class="btn btn-danger">Cancelar</a>
+				<a href="/proveedor/listar" class="btn btn-danger">Cancelar</a>
 				
 			</form>
 		</div>

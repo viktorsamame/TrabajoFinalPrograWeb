@@ -3,7 +3,7 @@
 	
 	<head>
 		<meta charset="UTF-8"></meta>
-		<title>Propietario</title>
+		<title>Paquete</title>
 		
 		<script type="text/javascript"
 				src="ajax.aspnetcdn.com/ajax/jquery.validate/1.16.0/jquery.validate.js">
@@ -25,17 +25,52 @@
 		<div th:replace="fragments/header :: header"></div>
 		
 		<div class="container">
-			<form th:action="@{/dueno/registrar}" method="post" th:object="${dueno}">
+			<form th:action="@{/paquete/registrar}" method="post" th:object="${paquete}">
 				<div class="form-group">
-					<label for="iddueno">ID:</label>
-					<input type="text" class="form-control" th:field="*{idDueno}"></input>
+					<label for="idpaquete">ID:</label>
+					<input type="text" class="form-control" th:field="*{idPaquete}"></input>
 					
 					<div class="form-group">
 						<label for="nombre">Nombre:</label>
-						<input type="text" class="form-control" th:field="*{nameDueno}" id="nombre"></input>
+						<input type="text" class="form-control" th:field="*{nombrePaquete}" id="nombre" maxlength="30"></input>
 						
-						<div class="alert alert-danger" th:if="${#fields.hasErrors('nameDueno')}" 
-							th:errors="*{nameDueno}">						
+						<div class="alert alert-danger" th:if="${#fields.hasErrors('nombrePaquete')}" 
+							th:errors="*{nombrePaquete}">						
+						</div>
+						
+						<label for="fechapaquete">FECHA :</label>
+						<input type="date" class="form-control" th:field="*{fechaPaquete}" id="fechapaquete"></input>
+					
+						<div class="alert alert-danger" th:if="${#fields.hasErrors('fechaPaquete')}" 
+							th:errors="*{fechaPaquete}">
+						</div>		
+						
+						<label for="precio">Precio:</label>
+						<input type="text" class="form-control" th:field="*{precioPaquete}" id="precio"  maxlength="5"> </input>
+						
+						<div class="alert alert-danger" th:if="${#fields.hasErrors('precioPaquete')}" 
+							th:errors="*{precioPaquete}">						
+						</div>
+						
+						<label for="cupos">Cupos:</label>
+						<input type="text" class="form-control" th:field="*{numCupos}" id="cupos"  maxlength="2"></input>
+						
+						<div class="alert alert-danger" th:if="${#fields.hasErrors('numCupos')}" 
+							th:errors="*{numCupos}">						
+						</div>
+						
+						<label for="lugarorigen">Lugar de Origen:</label>
+						<input type="text" class="form-control" th:field="*{lugarOrigen}" id="lugarorigen"></input>
+						
+						<div class="alert alert-danger" th:if="${#fields.hasErrors('lugarOrigen')}" 
+							th:errors="*{lugarOrigen}">						
+						</div>
+						
+						<label for="lugardestino">Lugar de Destino:</label>
+						<input type="text" class="form-control" th:field="*{lugarDestino}" id="lugardestino"></input>
+						
+						<div class="alert alert-danger" th:if="${#fields.hasErrors('lugarDestino')}" 
+							th:errors="*{lugarDestino}">						
 						</div>
 						
 					</div>
@@ -43,7 +78,7 @@
 				</div>
 				
 				<button type="submit" class="btn btn-primary">Aceptar</button>
-				<a href="/dueno/listar" class="btn btn-danger">Cancelar</a>
+				<a href="/paquete/listar" class="btn btn-danger">Cancelar</a>
 				
 			</form>
 		</div>

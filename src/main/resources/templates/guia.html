@@ -3,7 +3,7 @@
 	
 	<head>
 		<meta charset="UTF-8"></meta>
-		<title>Propietario</title>
+		<title>Guia</title>
 		
 		<script type="text/javascript"
 				src="ajax.aspnetcdn.com/ajax/jquery.validate/1.16.0/jquery.validate.js">
@@ -25,17 +25,46 @@
 		<div th:replace="fragments/header :: header"></div>
 		
 		<div class="container">
-			<form th:action="@{/dueno/registrar}" method="post" th:object="${dueno}">
+			<form th:action="@{/guia/registrar}" method="post" th:object="${guia}">
 				<div class="form-group">
-					<label for="iddueno">ID:</label>
-					<input type="text" class="form-control" th:field="*{idDueno}"></input>
+					<label for="idguia">ID:</label>
+					<input type="text" class="form-control" th:field="*{idGuia}"></input>
 					
 					<div class="form-group">
-						<label for="nombre">Nombre:</label>
-						<input type="text" class="form-control" th:field="*{nameDueno}" id="nombre"></input>
+						<label for="nombreguia">Nombre:</label>
+						<input type="text" class="form-control" th:field="*{nombreGuia}" id="nombreguia"  maxlength="30"></input>
 						
-						<div class="alert alert-danger" th:if="${#fields.hasErrors('nameDueno')}" 
-							th:errors="*{nameDueno}">						
+						<div class="alert alert-danger" th:if="${#fields.hasErrors('nombreGuia')}" 
+							th:errors="*{nombreGuia}">						
+						</div>
+						
+						<label for="apellido">Apellidos:</label>
+						<input type="text" class="form-control" th:field="*{apellidoGuia}" id="apellido"  maxlength="40"> </input>
+						
+						<div class="alert alert-danger" th:if="${#fields.hasErrors('apellidoGuia')}" 
+							th:errors="*{apellidoGuia}">						
+						</div>
+						
+						
+						<label for="dni">DNI:</label>
+						<input type="text" class="form-control" th:field="*{dniGuia}" id="dni"  maxlength="8"></input>
+						
+						<div class="alert alert-danger" th:if="${#fields.hasErrors('dniGuia')}" 
+							th:errors="*{dniGuia}">						
+						</div>
+						
+						<label for="celular">Celular:</label>
+						<input type="text" class="form-control" th:field="*{celularGuia}" id="celular" maxlength="9"></input>
+						
+						<div class="alert alert-danger" th:if="${#fields.hasErrors('celularGuia')}" 
+							th:errors="*{celularGuia}">						
+						</div>
+						
+						<label for="email">Email:</label>
+						<input type="text" class="form-control" th:field="*{emailGuia}" id="email" maxlength="40"></input>
+						
+						<div class="alert alert-danger" th:if="${#fields.hasErrors('emailGuia')}" 
+							th:errors="*{emailGuia}">						
 						</div>
 						
 					</div>
@@ -43,7 +72,7 @@
 				</div>
 				
 				<button type="submit" class="btn btn-primary">Aceptar</button>
-				<a href="/dueno/listar" class="btn btn-danger">Cancelar</a>
+				<a href="/guia/listar" class="btn btn-danger">Cancelar</a>
 				
 			</form>
 		</div>

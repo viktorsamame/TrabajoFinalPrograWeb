@@ -3,7 +3,7 @@
 	
 	<head>
 		<meta charset="UTF-8"></meta>
-		<title>Propietarios</title>
+		<title>Declaracion Jurada</title>
 		
 		<script type="text/javascript"
 				src="ajax.aspnetcdn.com/ajax/jquery.validate/1.16.0/jquery.validate.js">
@@ -28,13 +28,13 @@
 			<form id="myform">
 				<div class="row clearfix">
 					<div class="col-md-12 column">
-						<a 	style="border-bottom-color: black" th:href="@{/dueno/irRegistrar}" id="add-row"
+						<a 	style="border-bottom-color: rgb(0, 128, 255)" th:href="@{/declaracion/irRegistrar}" id="add-row"
 						   	type = "button"
 						   	class= "btn btn-primary btn-md left-block">
-							<span class="glyphicon glyphicon-plus"></span> Dueno
+							<span class="glyphicon glyphicon-plus"></span> Declaracion
 						</a>
 						
-						<a 	style="border-bottom-color: black" th:href="@{/dueno/irBuscar}" id="add-row"
+						<a 	style="border-bottom-color: rgb(0, 128, 255) " th:href="@{/declaracion/irBuscar}" id="add-row"
 						   	type = "button"
 						   	class= "btn btn-primary btn-md left-block">
 							<span class="glyphicon glyphicon-search"></span> Buscar
@@ -43,19 +43,21 @@
 						<table class="table table-bordered table-hover table-striped" id="tab_logic">
 							<thead>
 								<tr>
-									<th class="text-center">CODIGO</th>
-									<th class="text-center">PROPIETARIO</th>
+									<th class="text-center">ID</th>
+									<th class="text-center">JURAMENTO</th>
+									<th class="text-center">FECHA</th>
 									<th class="text-center">OPERACION</th>
 									<th class="text-center">OPERACION</th>
 								</tr>
 							</thead>
 							
 							<tbody>
-								<tr th:each="due: ${listaDuenos}">
-									<td th:text="${due.idDueno}"></td>
-									<td th:text="${due.nameDueno}"></td>
-									<td class="text-center"><a class="glyphicon glyphicon-trash" th:href="@{/dueno/eliminar?id=}+${due.idDueno}"> Eliminar</a></td>
-									<td class="text-center"><a class="glyphicon glyphicon-pencil" th:href="@{'/dueno/modificar/' + ${due.idDueno}}"> Modificar</a></td>
+								<tr th:each="dec: ${listaDeclaraciones}">
+									<td th:text="${dec.idDeclaracion}"></td>
+									<td th:text="${dec.juramento}"></td>
+									<td th:text="${#dates.format(dec.fechaDeclaracion, 'dd/MM/yyyy')}"></td>
+									<td class="text-center"><a class="glyphicon glyphicon-trash" th:href="@{/declaracion/eliminar?id=}+${dec.idDeclaracion}"> Eliminar</a></td>
+									<td class="text-center"><a class="glyphicon glyphicon-pencil" th:href="@{'/declaracion/modificar/' + ${dec.idDeclaracion}}"> Modificar</a></td>
 								</tr>
 							</tbody>
 						</table>

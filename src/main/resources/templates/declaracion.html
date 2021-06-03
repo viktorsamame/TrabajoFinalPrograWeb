@@ -3,7 +3,7 @@
 	
 	<head>
 		<meta charset="UTF-8"></meta>
-		<title>Declaración Jurada</title>
+		<title>Declaracion</title>
 		
 		<script type="text/javascript"
 				src="ajax.aspnetcdn.com/ajax/jquery.validate/1.16.0/jquery.validate.js">
@@ -27,23 +27,30 @@
 		<div class="container">
 			<form th:action="@{/declaracion/registrar}" method="post" th:object="${declaracion}">
 				<div class="form-group">
-					<label for="iddeclaracion">ID:</label>
+				<label for="iddeclaracion">ID:</label>
 					<input type="text" class="form-control" th:field="*{idDeclaracion}"></input>
 					
 					<div class="form-group">
-						<label for="nombre">Juramento:</label>
-						<input type="text" class="form-control" th:field="*{nameDueno}" id="nombre"></input>
+						<label for="juramento">Juramento:</label>
+						<input type="text" class="form-control" th:field="*{juramento}" id="juramento"></input>
 						
-						<div class="alert alert-danger" th:if="${#fields.hasErrors('nameDueno')}" 
-							th:errors="*{nameDueno}">						
+						<div class="alert alert-danger" th:if="${#fields.hasErrors('juramento')}" 
+							th:errors="*{juramento}">						
 						</div>
+						
+						<label for="fechaDeclaracion">FECHA :</label>
+						<input type="date" class="form-control" th:field="*{fechaDeclaracion}" id="fechaDeclaracion"></input>
+					
+						<div class="alert alert-danger" th:if="${#fields.hasErrors('fechaDeclaracion')}" 
+							th:errors="*{fechaDeclaracion}">
+						</div>		
 						
 					</div>
 				
 				</div>
 				
 				<button type="submit" class="btn btn-primary">Aceptar</button>
-				<a href="/dueno/listar" class="btn btn-danger">Cancelar</a>
+				<a href="/declaracion/listar" class="btn btn-danger">Cancelar</a>
 				
 			</form>
 		</div>

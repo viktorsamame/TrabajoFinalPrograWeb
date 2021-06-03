@@ -3,7 +3,7 @@
 	
 	<head>
 		<meta charset="UTF-8"></meta>
-		<title>Propietario</title>
+		<title>Turista</title>
 		
 		<script type="text/javascript"
 				src="ajax.aspnetcdn.com/ajax/jquery.validate/1.16.0/jquery.validate.js">
@@ -25,25 +25,60 @@
 		<div th:replace="fragments/header :: header"></div>
 		
 		<div class="container">
-			<form th:action="@{/dueno/registrar}" method="post" th:object="${dueno}">
+			<form th:action="@{/turista/registrar}" method="post" th:object="${turista}" action="">
 				<div class="form-group">
-					<label for="iddueno">ID:</label>
-					<input type="text" class="form-control" th:field="*{idDueno}"></input>
+					<label for="idturista">ID:</label>
+					<input type="text" class="form-control" th:field="*{idTurista}"></input>
 					
 					<div class="form-group">
 						<label for="nombre">Nombre:</label>
-						<input type="text" class="form-control" th:field="*{nameDueno}" id="nombre"></input>
+						<input type="text" class="form-control" th:field="*{nombreTurista}" id="nombre" maxlength="30"></input>
 						
-						<div class="alert alert-danger" th:if="${#fields.hasErrors('nameDueno')}" 
-							th:errors="*{nameDueno}">						
+						<div class="alert alert-danger" th:if="${#fields.hasErrors('nombreTurista')}" 
+							th:errors="*{nombreTurista}">						
 						</div>
 						
-					</div>
-				
+						<label for="apellido">Apellidos:</label>
+						<input type="text" class="form-control" th:field="*{apellidoTurista}" id="apellido" maxlength="30"></input>
+						
+						<div class="alert alert-danger" th:if="${#fields.hasErrors('apellidoTurista')}" 
+							th:errors="*{apellidoTurista}">						
+						</div>
+						
+					
+						<label for="celular">Celular:</label>
+						<input type="text" class="form-control" th:field="*{celularTurista}" id="celular" maxlength="9" ></input>
+						
+						<div class="alert alert-danger" th:if="${#fields.hasErrors('celularTurista')}" 
+							th:errors="*{celularTurista}">						
+						</div>
+						
+						<label for="direccion">Direccion:</label>
+						<input type="text" class="form-control" th:field="*{direccionTurista}" id="direccion"maxlength="40"></input>
+						
+						<div class="alert alert-danger" th:if="${#fields.hasErrors('direccionTurista')}" 
+							th:errors="*{direccionTurista}">						
+						</div>
+						
+						<label for="dni">DNI:</label>
+						<input type="text" class="form-control" th:field="*{dniTurista}" id="dni" maxlength="8"></input>
+						
+						<div class="alert alert-danger" th:if="${#fields.hasErrors('dniTurista')}" 
+							th:errors="*{dniTurista}">						
+						</div>
+						
+						<label for="email">Email:</label>
+						<input type="text" class="form-control" th:field="*{emailTurista}" id="email " maxlength="40"></input>
+						
+						<div class="alert alert-danger" th:if="${#fields.hasErrors('emailTurista')}" 
+							th:errors="*{emailTurista}">						
+						</div>
+					
+				</div>
 				</div>
 				
 				<button type="submit" class="btn btn-primary">Aceptar</button>
-				<a href="/dueno/listar" class="btn btn-danger">Cancelar</a>
+				<a href="/turista/listar" class="btn btn-danger">Cancelar</a>
 				
 			</form>
 		</div>

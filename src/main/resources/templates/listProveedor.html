@@ -3,7 +3,7 @@
 	
 	<head>
 		<meta charset="UTF-8"></meta>
-		<title>Propietarios</title>
+		<title>Proveedores</title>
 		
 		<script type="text/javascript"
 				src="ajax.aspnetcdn.com/ajax/jquery.validate/1.16.0/jquery.validate.js">
@@ -28,13 +28,13 @@
 			<form id="myform">
 				<div class="row clearfix">
 					<div class="col-md-12 column">
-						<a 	style="border-bottom-color: black" th:href="@{/dueno/irRegistrar}" id="add-row"
+						<a 	style="border-bottom-color: black" th:href="@{/proveedor/irRegistrar}" id="add-row"
 						   	type = "button"
 						   	class= "btn btn-primary btn-md left-block">
-							<span class="glyphicon glyphicon-plus"></span> Dueno
+							<span class="glyphicon glyphicon-plus"></span> Proveedor
 						</a>
 						
-						<a 	style="border-bottom-color: black" th:href="@{/dueno/irBuscar}" id="add-row"
+						<a 	style="border-bottom-color: black" th:href="@{/proveedor/irBuscar}" id="add-row"
 						   	type = "button"
 						   	class= "btn btn-primary btn-md left-block">
 							<span class="glyphicon glyphicon-search"></span> Buscar
@@ -43,19 +43,25 @@
 						<table class="table table-bordered table-hover table-striped" id="tab_logic">
 							<thead>
 								<tr>
-									<th class="text-center">CODIGO</th>
-									<th class="text-center">PROPIETARIO</th>
+									<th class="text-center">ID</th>
+									<th class="text-center">NOMBRE</th>
+									<th class="text-center">APELLIDOS</th>
+									<th class="text-center">RUC</th>
+									<th class="text-center">TELEFONO</th>
 									<th class="text-center">OPERACION</th>
 									<th class="text-center">OPERACION</th>
 								</tr>
 							</thead>
 							
 							<tbody>
-								<tr th:each="due: ${listaDuenos}">
-									<td th:text="${due.idDueno}"></td>
-									<td th:text="${due.nameDueno}"></td>
-									<td class="text-center"><a class="glyphicon glyphicon-trash" th:href="@{/dueno/eliminar?id=}+${due.idDueno}"> Eliminar</a></td>
-									<td class="text-center"><a class="glyphicon glyphicon-pencil" th:href="@{'/dueno/modificar/' + ${due.idDueno}}"> Modificar</a></td>
+								<tr th:each="pro: ${listaProveedores}">
+									<td th:text="${pro.idProveedor}"></td>
+									<td th:text="${pro.nombreProveedor}"></td>
+									<td th:text="${pro.apellidoProveedor}"></td>
+									<td th:text="${pro.rucProveedor}"></td>
+									<td th:text="${pro.telefonoProveedor}"></td>
+									<td class="text-center"><a class="glyphicon glyphicon-trash" th:href="@{/proveedor/eliminar?id=}+${pro.idProveedor}"> Eliminar</a></td>
+									<td class="text-center"><a class="glyphicon glyphicon-pencil" th:href="@{'/proveedor/modificar/' + ${pro.idProveedor}}"> Modificar</a></td>
 								</tr>
 							</tbody>
 						</table>

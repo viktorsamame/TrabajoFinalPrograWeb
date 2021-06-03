@@ -3,7 +3,7 @@
 	
 	<head>
 		<meta charset="UTF-8"></meta>
-		<title>Mascotas</title>
+		<title>Reservas</title>
 		
 		<script type="text/javascript"
 				src="ajax.aspnetcdn.com/ajax/jquery.validate/1.16.0/jquery.validate.js">
@@ -28,13 +28,13 @@
 			<form id="myform">
 				<div class="row clearfix">
 					<div class="col-md-12 column">
-						<a 	style="border-bottom-color: black" th:href="@{/pet/irRegistrar}" id="add-row"
+						<a 	style="border-bottom-color: black" th:href="@{/reserva/irRegistrar}" id="add-row"
 						   	type = "button"
 						   	class= "btn btn-primary btn-md left-block">
-							<span class="glyphicon glyphicon-plus"></span> Mascota
+							<span class="glyphicon glyphicon-plus"></span> Reservar
 						</a>
 						
-						<a 	style="border-bottom-color: black" th:href="@{/pet/irBuscar}" id="add-row"
+						<a 	style="border-bottom-color: black" th:href="@{/reserva/irBuscar}" id="add-row"
 						   	type = "button"
 						   	class= "btn btn-primary btn-md left-block">
 							<span class="glyphicon glyphicon-search"></span> Buscar
@@ -43,25 +43,31 @@
 						<table class="table table-bordered table-hover table-striped" id="tab_logic">
 							<thead>
 								<tr>
-									<th class="text-center">CODIGO</th>
-									<th class="text-center">MASCOTA</th>
-									<th class="text-center">FEC. NACIMIENTO</th>
-									<th class="text-center">RAZA</th>
-									<th class="text-center">PROPIETARIO</th>
+									<th class="text-center">ID</th>
+									<th class="text-center">NOMBRE</th>
+									<th class="text-center">NUMERO DE PARTICIPANTES</th>
+									<th class="text-center">FECHA</th>
+									<th class="text-center">TURISTA</th>
+									<th class="text-center">PAQUETE</th>
+									<th class="text-center">MONTO TOTAL</th>
+									<th class="text-center">CUPOS DISPONIBLES</th>
 									<th class="text-center">OPERACIÓN</th>
 									<th class="text-center">OPERACIÓN</th>
 								</tr>
 							</thead>
 							
 							<tbody>
-								<tr th:each="p: ${listaMascotas}">
-									<td th:text="${p.idPet}"></td>
-									<td th:text="${p.namePet}"></td>
-									<td th:text="${#dates.format(p.birthDatePet, 'dd/MM/yyyy')}"></td>
-									<td th:text="${p.race.nameRace}"></td>
-									<td th:text="${p.dueno.nameDueno}"></td>
-									<td > <a th:href="@{/pet/eliminar?id=}+${p.idPet}"> Eliminar</a></td>
-									<td > <a th:href="@{'/pet/modificar/'+${p.idPet}}"> Modificar</a></td>
+								<tr th:each="r: ${listaReservas}">
+									<td th:text="${r.idReserva}"></td>
+									<td th:text="${r.nombreReserva}"></td>
+									<td th:text="${r.numParticipantes}"></td>
+									<td th:text="${#dates.format(r.fechaReserva, 'dd/MM/yyyy')}"></td>
+									<td th:text="${r.turista.nombreTurista}"></td>
+									<td th:text="${r.paquete.nombrePaquete}"></td>
+									<td th:text="${r.numParticipantes*r.paquete.precioPaquete}"></td>
+									<td th:text="${r.paquete.numCupos-r.numParticipantes}"></td>					
+									<td class="text-center"><a class="glyphicon glyphicon-trash" th:href="@{/reserva/eliminar?id=}+${r.idReserva}"> Eliminar</a></td>
+									<td class="text-center"><a class="glyphicon glyphicon-pencil" th:href="@{'/reserva/modificar/' + ${r.idReserva}}"> Modificar</a></td>
 								</tr>
 							</tbody>
 						</table>

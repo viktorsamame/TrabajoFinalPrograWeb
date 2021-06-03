@@ -3,7 +3,7 @@
 	
 	<head>
 		<meta charset="UTF-8"></meta>
-		<title>Propietarios</title>
+		<title>Turistas</title>
 		
 		<script type="text/javascript"
 				src="ajax.aspnetcdn.com/ajax/jquery.validate/1.16.0/jquery.validate.js">
@@ -28,13 +28,13 @@
 			<form id="myform">
 				<div class="row clearfix">
 					<div class="col-md-12 column">
-						<a 	style="border-bottom-color: black" th:href="@{/dueno/irRegistrar}" id="add-row"
+						<a 	style="border-bottom-color: black" th:href="@{/turista/irRegistrar}" id="add-row"
 						   	type = "button"
 						   	class= "btn btn-primary btn-md left-block">
-							<span class="glyphicon glyphicon-plus"></span> Dueno
+							<span class="glyphicon glyphicon-plus"></span> Turista
 						</a>
 						
-						<a 	style="border-bottom-color: black" th:href="@{/dueno/irBuscar}" id="add-row"
+						<a 	style="border-bottom-color: black" th:href="@{/turista/irBuscar}" id="add-row"
 						   	type = "button"
 						   	class= "btn btn-primary btn-md left-block">
 							<span class="glyphicon glyphicon-search"></span> Buscar
@@ -43,19 +43,29 @@
 						<table class="table table-bordered table-hover table-striped" id="tab_logic">
 							<thead>
 								<tr>
-									<th class="text-center">CODIGO</th>
-									<th class="text-center">PROPIETARIO</th>
+									<th class="text-center">ID</th>
+									<th class="text-center">NOMBRE</th>
+									<th class="text-center">APELLIDOS</th>
+									<th class="text-center">DNI</th>
+									<th class="text-center">DIRECCION</th>
+									<th class="text-center">CELULAR</th>
+									<th class="text-center">EMAIL</th>
 									<th class="text-center">OPERACION</th>
 									<th class="text-center">OPERACION</th>
 								</tr>
 							</thead>
 							
 							<tbody>
-								<tr th:each="due: ${listaDuenos}">
-									<td th:text="${due.idDueno}"></td>
-									<td th:text="${due.nameDueno}"></td>
-									<td class="text-center"><a class="glyphicon glyphicon-trash" th:href="@{/dueno/eliminar?id=}+${due.idDueno}"> Eliminar</a></td>
-									<td class="text-center"><a class="glyphicon glyphicon-pencil" th:href="@{'/dueno/modificar/' + ${due.idDueno}}"> Modificar</a></td>
+								<tr th:each="tu: ${listaTuristas}">
+									<td th:text="${tu.idTurista}"></td>
+									<td th:text="${tu.nombreTurista}"></td>
+									<td th:text="${tu.apellidoTurista}"></td>
+									<td th:text="${tu.dniTurista}"></td>
+									<td th:text="${tu.direccionTurista}"></td>
+									<td th:text="${tu.celularTurista}"></td>
+									<td th:text="${tu.emailTurista}"></td>
+									<td class="text-center"><a class="glyphicon glyphicon-trash" th:href="@{/turista/eliminar?id=}+${tu.idTurista}"> Eliminar</a></td>
+									<td class="text-center"><a class="glyphicon glyphicon-pencil" th:href="@{'/turista/modificar/' + ${tu.idTurista}}"> Modificar</a></td>
 								</tr>
 							</tbody>
 						</table>
