@@ -20,7 +20,6 @@ import pe.org.incatrek.service.IGuiaService;
 
 @Controller
 @RequestMapping("/guia")
-
 public class GuiaController {
 
 		@Autowired

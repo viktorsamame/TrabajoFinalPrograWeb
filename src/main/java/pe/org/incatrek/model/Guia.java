@@ -31,7 +31,7 @@ public class Guia implements Serializable {
 	@Column(name = "celularGuia", nullable = false, length = 9)
 	private int celularGuia;
 	
-	@Column(name = "emailGuia", nullable = false, length = 30)
+	@Column(name = "emailGuia", nullable = false, length = 40)
 	private String emailGuia;
 
 	public Guia() {

@@ -10,6 +10,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
 @Entity
 @Table(name="Declaracion")
 public class Declaracion implements Serializable {
@@ -23,6 +28,8 @@ public class Declaracion implements Serializable {
 	@Column(name = "juramento")
 	private String juramento;
 	
+	@Temporal(TemporalType.DATE)
+	@DateTimeFormat (pattern="yyyy-MM-dd")
 	private Date fechaDeclaracion;
 
 	public Declaracion() {

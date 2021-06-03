@@ -20,7 +20,6 @@ import pe.org.incatrek.service.IProveedorService;
 
 @Controller
 @RequestMapping("/proveedor")
-
 public class ProveedorController {
 
 		@Autowired
