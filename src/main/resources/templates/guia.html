@@ -9,16 +9,13 @@
 				src="ajax.aspnetcdn.com/ajax/jquery.validate/1.16.0/jquery.validate.js">
 		</script>
 		
-		<link
-			href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"
-			rel="stylesheet" id="bootstrap-css">
-		</link>
-		
-		<script
-			src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js">
-		</script>
-		
-		<script src="code.jquery.com/jquery-3.2.1.min.js"></script>
+		<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+	
 	</head>
 	
 	<body>
@@ -32,14 +29,14 @@
 					
 					<div class="form-group">
 						<label for="nombreguia">Nombre:</label>
-						<input type="text" class="form-control" th:field="*{nombreGuia}" id="nombreguia"  maxlength="30"></input>
+						<input type="text" class="form-control" th:field="*{nombreGuia}" id="nombreguia"></input>
 						
 						<div class="alert alert-danger" th:if="${#fields.hasErrors('nombreGuia')}" 
 							th:errors="*{nombreGuia}">						
 						</div>
 						
 						<label for="apellido">Apellidos:</label>
-						<input type="text" class="form-control" th:field="*{apellidoGuia}" id="apellido"  maxlength="40"> </input>
+						<input type="text" class="form-control" th:field="*{apellidoGuia}" id="apellido"></input>
 						
 						<div class="alert alert-danger" th:if="${#fields.hasErrors('apellidoGuia')}" 
 							th:errors="*{apellidoGuia}">						
@@ -47,21 +44,21 @@
 						
 						
 						<label for="dni">DNI:</label>
-						<input type="text" class="form-control" th:field="*{dniGuia}" id="dni"  maxlength="8"></input>
+						<input type="text" class="form-control" th:field="*{dniGuia}" id="dni"></input>
 						
 						<div class="alert alert-danger" th:if="${#fields.hasErrors('dniGuia')}" 
 							th:errors="*{dniGuia}">						
 						</div>
 						
 						<label for="celular">Celular:</label>
-						<input type="text" class="form-control" th:field="*{celularGuia}" id="celular" maxlength="9"></input>
+						<input type="text" class="form-control" th:field="*{celularGuia}" id="celular"></input>
 						
 						<div class="alert alert-danger" th:if="${#fields.hasErrors('celularGuia')}" 
 							th:errors="*{celularGuia}">						
 						</div>
 						
 						<label for="email">Email:</label>
-						<input type="text" class="form-control" th:field="*{emailGuia}" id="email" maxlength="40"></input>
+						<input type="text" class="form-control" th:field="*{emailGuia}" id="email"></input>
 						
 						<div class="alert alert-danger" th:if="${#fields.hasErrors('emailGuia')}" 
 							th:errors="*{emailGuia}">						
@@ -78,6 +75,8 @@
 		</div>
 		
 		<div th:replace="fragments/footer :: footer"></div>
+					<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+		
 	</body>
 	
 </html>

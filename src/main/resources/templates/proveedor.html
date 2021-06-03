@@ -5,20 +5,17 @@
 		<meta charset="UTF-8"></meta>
 		<title>Proveedor</title>
 		
-		<script type="text/javascript"
+			<script type="text/javascript"
 				src="ajax.aspnetcdn.com/ajax/jquery.validate/1.16.0/jquery.validate.js">
 		</script>
 		
-		<link
-			href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"
-			rel="stylesheet" id="bootstrap-css">
-		</link>
-		
-		<script
-			src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js">
-		</script>
-		
-		<script src="code.jquery.com/jquery-3.2.1.min.js"></script>
+		<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+	
 	</head>
 	
 	<body>
@@ -32,28 +29,28 @@
 					
 					<div class="form-group">
 						<label for="nombre">Nombre:</label>
-						<input type="text" class="form-control" th:field="*{nombreProveedor}" id="nombre" maxlength="30"></input>
+						<input type="text" class="form-control" th:field="*{nombreProveedor}" id="nombre"></input>
 						
 						<div class="alert alert-danger" th:if="${#fields.hasErrors('nombreProveedor')}" 
 							th:errors="*{nombreProveedor}">						
 						</div>
 						
 						<label for="apellido">Apellidos:</label>
-						<input type="text" class="form-control" th:field="*{apellidoProveedor}" id="apellido" maxlength="30"></input>
+						<input type="text" class="form-control" th:field="*{apellidoProveedor}" id="apellido"></input>
 						
 						<div class="alert alert-danger" th:if="${#fields.hasErrors('apellidoProveedor')}" 
 							th:errors="*{apellidoProveedor}">						
 						</div>
 						
 						<label for="ruc">RUC:</label>
-						<input type="text" class="form-control" th:field="*{rucProveedor}" id="ruc" maxlength="11"></input>
+						<input type="text" class="form-control" th:field="*{rucProveedor}" id="ruc"></input>
 						
 						<div class="alert alert-danger" th:if="${#fields.hasErrors('rucProveedor')}" 
 							th:errors="*{rucProveedor}">						
 						</div>
 						
 						<label for="telefono">Telefono</label>
-						<input type="text" class="form-control" th:field="*{telefonoProveedor}" id="telefono" maxlength="9"></input>
+						<input type="text" class="form-control" th:field="*{telefonoProveedor}" id="telefono"></input>
 						
 						<div class="alert alert-danger" th:if="${#fields.hasErrors('telefonoProveedor')}" 
 							th:errors="*{telefonoProveedor}">						
@@ -70,6 +67,8 @@
 		</div>
 		
 		<div th:replace="fragments/footer :: footer"></div>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+		
 	</body>
 	
 </html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+	
+	<head>
+	
+		<meta charset="UTF-8"></meta>
+		<title>Búsqueda de Reserva</title>
+		
+		<script type="text/javascript"
+				src="ajax.aspnetcdn.com/ajax/jquery.validate/1.16.0/jquery.validate.js">
+		</script>
+		
+		<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+	
+				
+	</head>
+	
+	<body>
+		<div th:replace="fragments/header :: header"></div>
+		
+		<div class="container-fluid">
+			<div class="row clearfix">
+				
+				<h1 class='text-center'>Buscar Reserva</h1>
+				
+				<form th:action="@{/reserva/buscar}" method="post" th:object="${reserva}">
+					<div class="form-group">
+						<div class="col-sm-12">
+							<input 	type="text" class="form-control" th:field="*{nombreReserva}" id="res"
+									placeholder="Ingrese dato a buscar por Nombre de reserva"></input>							
+							<div align="left">
+								<button type="submit" class="btn btn-danger">Buscar</button>
+								<a href="/reserva/listar" class="btn btn-dark">Cancelar</a>
+							</div>							
+						</div>
+					</div>
+				</form>					
+			</div>
+			
+			<hr class="sidebar-divider">
+			
+			<table class="table table-bordered table-hover table-striped" id="tab_logic">
+				<thead>
+					<tr>
+						<th class="text-center">ID</th>
+						<th class="text-center">NOMBRE</th>
+						<th class="text-center">NUMERO DE PARTICIPANTES</th>
+						<th class="text-center">FECHA</th>
+						<th class="text-center">TURISTA</th>
+						<th class="text-center">PAQUETE</th>								
+						<th class="text-center">MONTO TOTAL</th>
+						<th class="text-center">CUPOS DISPONIBLES</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="res: ${listaReservas}">
+						<td th:text="${res.idReserva}"></td>
+						<td th:text="${res.nombreReserva}"></td>
+						<td th:text="${res.numParticipantes}"></td>
+						<td th:text="${#dates.format(res.fechaReserva, 'dd/MM/yyyy')}"></td>
+						<td th:text="${res.turista.nombreTurista}"></td>
+						<td th:text="${res.paquete.nombrePaquete}"></td>							
+						<td th:text="${res.numParticipantes*res.paquete.precioPaquete}"></td>
+						<td th:text="${res.paquete.numCupos-res.numParticipantes}"></td>					
+				
+					</tr>
+				</tbody>
+			</table>
+			
+			<p th:text="${mensaje}" class="form-text text-dark"></p>			
+			
+		</div>			
+				
+		<div th:replace="fragments/footer :: footer"></div>
+					<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+		
+	</body>
+	
+</html>
