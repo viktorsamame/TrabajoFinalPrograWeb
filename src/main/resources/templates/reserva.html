@@ -21,35 +21,35 @@
 	<body>
 		<div th:replace="fragments/header :: header"></div>
 		
-		<div class="container">
+		<div class="container" style='width: 450px; margin-top:25px; background-color: #13293E; padding: 15px; border-radius: 8px;'>
 			<form th:action="@{/reserva/registrar}" method="post" th:object="${reserva}">
 				<div class="form-group">
-					<label for="idreserva">ID:</label>
-					<input type="text" class="form-control" th:field="*{idReserva}"></input>
+					<label for="idreserva" style='color:white;'>ID:</label>
+					<input style='margin-bottom:20px;' type="text" class="form-control" th:field="*{idReserva}"></input>
 					
 				<div class="form-group">
-					<label for="nombre">NOMBRE::</label>
-					<input type="text" class="form-control" th:field="*{nombreReserva}" id="nombreReserva"></input>
+					<label for="nombre" style='color:white;'>Nombre</label>
+					<input style='margin-bottom:20px;' type="text" class="form-control" th:field="*{nombreReserva}" id="nombreReserva"></input>
 					
 					<div class="alert alert-danger" th:if="${#fields.hasErrors('nombreReserva')}" 
 							th:errors="*{nombreReserva}">						
 					</div>
 					
-					<label for="numeroparticipantes">Numero de Participantes:</label>
-					<input type="text" class="form-control" th:field="*{numParticipantes}" id="numeroparticipantes"></input>
+					<label for="numeroparticipantes" style='color:white;'>Numero de Participantes:</label>
+					<input style='margin-bottom:20px;' type="text" class="form-control" th:field="*{numParticipantes}" id="numeroparticipantes"></input>
 					
 					<div class="alert alert-danger" th:if="${#fields.hasErrors('numParticipantes')}" 
 							th:errors="*{numParticipantes}">						
 					</div>
 						
-					<label for="fechaReserva">FECHA :</label>
-					<input type="date" class="form-control" th:field="*{fechaReserva}" id="fechaReserva"></input>
+					<label for="fechaReserva" style='color:white;'>FECHA :</label>
+					<input style='margin-bottom:20px;' type="date" class="form-control" th:field="*{fechaReserva}" id="fechaReserva"></input>
 					
 					<div class="alert alert-danger" th:if="${#fields.hasErrors('fechaReserva')}" 
 							th:errors="*{fechaReserva}">
 					</div>		
 									
-					<label for="turista" class= "col-sm-2 col-form-label">Turista:</label>
+					<label style='color:white;' for="turista" class= "col-sm-2 col-form-label">Turista:</label>
 					<select class="form-control" th:field="*{turista.idTurista}"> 
 						<option th:each= "t:${listaTuristas}" th:value="${t.idTurista}"
 								th:text="${t.nombreTurista}"
@@ -57,7 +57,7 @@
 						</option>
 					</select>	
 					
-					<label for="paquete" class= "col-sm-2 col-form-label">Paquete:</label>
+					<label style='color:white;' for="paquete" class= "col-sm-2 col-form-label">Paquete:</label>
 					<select class="form-control" th:field="*{paquete.idPaquete}"> 
 						<option th:each= "p:${listaPaquetes}" th:value="${p.idPaquete}"
 								th:text="${p.nombrePaquete}"
@@ -69,8 +69,8 @@
 		
 			</div>
 				
-				<button type="submit" class="btn btn-primary">Aceptar</button>
-				<a href="/reserva/listar" class="btn btn-danger">Cancelar</a>
+				<button type="submit" class="btn btn-primary" style='margin-top:25px'>Aceptar</button>
+				<a href="/reserva/listar" class="btn btn-danger" style='margin-top:25px'>Cancelar</a>
 				
 			</form>
 		</div>

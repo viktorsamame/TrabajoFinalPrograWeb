@@ -21,44 +21,44 @@
 	<body>
 		<div th:replace="fragments/header :: header"></div>
 		
-		<div class="container">
+		<div class="container" style='width: 450px; margin-top:25px; background-color: #13293E; padding: 15px; border-radius: 8px;'>
 			<form th:action="@{/guia/registrar}" method="post" th:object="${guia}">
 				<div class="form-group">
-					<label for="idguia">ID:</label>
+					<label for="idguia" style='color:white;'>ID:</label>
 					<input type="text" class="form-control" th:field="*{idGuia}"></input>
 					
 					<div class="form-group">
-						<label for="nombreguia">Nombre:</label>
-						<input type="text" class="form-control" th:field="*{nombreGuia}" id="nombreguia"></input>
+						<label for="nombreguia" style='color:white;'>Nombre:</label>
+						<input style='margin-bottom:20px;' type="text" class="form-control" th:field="*{nombreGuia}" id="nombreguia"></input>
 						
 						<div class="alert alert-danger" th:if="${#fields.hasErrors('nombreGuia')}" 
 							th:errors="*{nombreGuia}">						
 						</div>
 						
-						<label for="apellido">Apellidos:</label>
-						<input type="text" class="form-control" th:field="*{apellidoGuia}" id="apellido"></input>
+						<label for="apellido" style='color:white;'>Apellidos:</label>
+						<input style='margin-bottom:20px;' type="text" class="form-control" th:field="*{apellidoGuia}" id="apellido"></input>
 						
 						<div class="alert alert-danger" th:if="${#fields.hasErrors('apellidoGuia')}" 
 							th:errors="*{apellidoGuia}">						
 						</div>
 						
 						
-						<label for="dni">DNI:</label>
-						<input type="text" class="form-control" th:field="*{dniGuia}" id="dni"></input>
+						<label for="dni" style='color:white;'>DNI:</label>
+						<input style='margin-bottom:20px;' type="text" class="form-control" th:field="*{dniGuia}" id="dni"></input>
 						
 						<div class="alert alert-danger" th:if="${#fields.hasErrors('dniGuia')}" 
 							th:errors="*{dniGuia}">						
 						</div>
 						
-						<label for="celular">Celular:</label>
-						<input type="text" class="form-control" th:field="*{celularGuia}" id="celular"></input>
+						<label for="celular" style='color:white;'>Celular:</label>
+						<input style='margin-bottom:20px;' type="text" class="form-control" th:field="*{celularGuia}" id="celular"></input>
 						
 						<div class="alert alert-danger" th:if="${#fields.hasErrors('celularGuia')}" 
 							th:errors="*{celularGuia}">						
 						</div>
 						
-						<label for="email">Email:</label>
-						<input type="text" class="form-control" th:field="*{emailGuia}" id="email"></input>
+						<label for="email" style='color:white;'>Email:</label>
+						<input style='margin-bottom:20px;' type="text" class="form-control" th:field="*{emailGuia}" id="email"></input>
 						
 						<div class="alert alert-danger" th:if="${#fields.hasErrors('emailGuia')}" 
 							th:errors="*{emailGuia}">						
@@ -68,8 +68,8 @@
 				
 				</div>
 				
-				<button type="submit" class="btn btn-primary">Aceptar</button>
-				<a href="/guia/listar" class="btn btn-danger">Cancelar</a>
+				<button type="submit" class="btn btn-primary" style='margin-top:25px'>Aceptar</button>
+				<a href="/guia/listar" class="btn btn-danger" style='margin-top:25px'>Cancelar</a>
 				
 			</form>
 		</div>

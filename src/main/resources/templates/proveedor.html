@@ -21,36 +21,31 @@
 	<body>
 		<div th:replace="fragments/header :: header"></div>
 		
-		<div class="container">
+		<div class="container" style='width: 450px; margin-top:25px; background-color: #13293E; padding: 15px; border-radius: 8px;'>
 			<form th:action="@{/proveedor/registrar}" method="post" th:object="${proveedor}">
 				<div class="form-group">
-					<label for="idproveedor">ID:</label>
-					<input type="text" class="form-control" th:field="*{idProveedor}"></input>
+					<label for="idproveedor" style='color:white;'>ID:</label>
+					<input style='margin-bottom:20px;' type="text" class="form-control" th:field="*{idProveedor}"></input>
 					
 					<div class="form-group">
-						<label for="nombre">Nombre:</label>
-						<input type="text" class="form-control" th:field="*{nombreProveedor}" id="nombre"></input>
+						<label for="nombre" style='color:white;'>Nombre:</label>
+						<input style='margin-bottom:20px;' type="text" class="form-control" th:field="*{nombreProveedor}" id="nombre"></input>
 						
 						<div class="alert alert-danger" th:if="${#fields.hasErrors('nombreProveedor')}" 
 							th:errors="*{nombreProveedor}">						
 						</div>
 						
-						<label for="apellido">Apellidos:</label>
-						<input type="text" class="form-control" th:field="*{apellidoProveedor}" id="apellido"></input>
+					
 						
-						<div class="alert alert-danger" th:if="${#fields.hasErrors('apellidoProveedor')}" 
-							th:errors="*{apellidoProveedor}">						
-						</div>
-						
-						<label for="ruc">RUC:</label>
-						<input type="text" class="form-control" th:field="*{rucProveedor}" id="ruc"></input>
+						<label for="ruc" style='color:white;'>RUC:</label>
+						<input style='margin-bottom:20px;' type="text" class="form-control" th:field="*{rucProveedor}" id="ruc"></input>
 						
 						<div class="alert alert-danger" th:if="${#fields.hasErrors('rucProveedor')}" 
 							th:errors="*{rucProveedor}">						
 						</div>
 						
-						<label for="telefono">Telefono</label>
-						<input type="text" class="form-control" th:field="*{telefonoProveedor}" id="telefono"></input>
+						<label for="telefono" style='color:white;'>Telefono</label>
+						<input style='margin-bottom:20px;' type="text" class="form-control" th:field="*{telefonoProveedor}" id="telefono"></input>
 						
 						<div class="alert alert-danger" th:if="${#fields.hasErrors('telefonoProveedor')}" 
 							th:errors="*{telefonoProveedor}">						
@@ -60,8 +55,8 @@
 				
 				</div>
 				
-				<button type="submit" class="btn btn-primary">Aceptar</button>
-				<a href="/proveedor/listar" class="btn btn-danger">Cancelar</a>
+				<button type="submit" class="btn btn-primary" style='margin-top:25px'>Aceptar</button>
+				<a href="/proveedor/listar" class="btn btn-danger" style='margin-top:25px'>Cancelar</a>
 				
 			</form>
 		</div>

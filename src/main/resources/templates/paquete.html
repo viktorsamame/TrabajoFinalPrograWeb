@@ -21,50 +21,50 @@
 	<body>
 		<div th:replace="fragments/header :: header"></div>
 		
-		<div class="container">
+		<div class="container" style='width: 450px; margin-top:25px; background-color: #13293E; padding: 15px; border-radius: 8px;'>
 			<form th:action="@{/paquete/registrar}" method="post" th:object="${paquete}">
 				<div class="form-group">
-					<label for="idpaquete">ID:</label>
+					<label for="idpaquete" style='color:white;'>ID:</label>
 					<input type="text" class="form-control" th:field="*{idPaquete}"></input>
 					
 					<div class="form-group">
-						<label for="nombre">Nombre:</label>
-						<input type="text" class="form-control" th:field="*{nombrePaquete}" id="nombre"></input>
+						<label for="nombre" style='color:white;'>Nombre:</label>
+						<input style='margin-bottom:20px;' type="text" class="form-control" th:field="*{nombrePaquete}" id="nombre"></input>
 						
 						<div class="alert alert-danger" th:if="${#fields.hasErrors('nombrePaquete')}" 
 							th:errors="*{nombrePaquete}">						
 						</div>
 						
-						<label for="fechapaquete">FECHA :</label>
-						<input type="date" class="form-control" th:field="*{fechaPaquete}" id="fechapaquete"></input>
+						<label for="fechapaquete" style='color:white;'>FECHA :</label>
+						<input style='margin-bottom:20px;' type="date" class="form-control" th:field="*{fechaPaquete}" id="fechapaquete"></input>
 					
 						<div class="alert alert-danger" th:if="${#fields.hasErrors('fechaPaquete')}" 
 							th:errors="*{fechaPaquete}">
 						</div>		
 						
-						<label for="precio">Precio:</label>
-						<input type="text" class="form-control" th:field="*{precioPaquete}" id="precio"></input>
+						<label for="precio" style='color:white;'>Precio:</label>
+						<input style='margin-bottom:20px;' type="text" class="form-control" th:field="*{precioPaquete}" id="precio"></input>
 						
 						<div class="alert alert-danger" th:if="${#fields.hasErrors('precioPaquete')}" 
 							th:errors="*{precioPaquete}">						
 						</div>
 						
-						<label for="cupos">Cupos:</label>
-						<input type="text" class="form-control" th:field="*{numCupos}" id="cupos"></input>
+						<label for="cupos" style='color:white;'>Cupos:</label>
+						<input style='margin-bottom:20px;' type="text" class="form-control" th:field="*{numCupos}" id="cupos"></input>
 						
 						<div class="alert alert-danger" th:if="${#fields.hasErrors('numCupos')}" 
 							th:errors="*{numCupos}">						
 						</div>
 						
-						<label for="lugarorigen">Lugar de Origen:</label>
-						<input type="text" class="form-control" th:field="*{lugarOrigen}" id="lugarorigen"></input>
+						<label for="lugarorigen" style='color:white;'>Lugar de Origen:</label>
+						<input style='margin-bottom:20px;' type="text" class="form-control" th:field="*{lugarOrigen}" id="lugarorigen"></input>
 						
 						<div class="alert alert-danger" th:if="${#fields.hasErrors('lugarOrigen')}" 
 							th:errors="*{lugarOrigen}">						
 						</div>
 						
-						<label for="lugardestino">Lugar de Destino:</label>
-						<input type="text" class="form-control" th:field="*{lugarDestino}" id="lugardestino"></input>
+						<label for="lugardestino" style='color:white;'>Lugar de Destino:</label>
+						<input style='margin-bottom:20px;' type="text" class="form-control" th:field="*{lugarDestino}" id="lugardestino"></input>
 						
 						<div class="alert alert-danger" th:if="${#fields.hasErrors('lugarDestino')}" 
 							th:errors="*{lugarDestino}">						
@@ -74,8 +74,8 @@
 				
 				</div>
 				
-				<button type="submit" class="btn btn-primary">Aceptar</button>
-				<a href="/paquete/listar" class="btn btn-danger">Cancelar</a>
+				<button type="submit" class="btn btn-primary" style='margin-top:25px'>Aceptar</button>
+				<a href="/paquete/listar" class="btn btn-danger" style='margin-top:25px'>Cancelar</a>
 				
 			</form>
 		</div>

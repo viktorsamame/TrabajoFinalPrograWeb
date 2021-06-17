@@ -21,51 +21,51 @@
 	<body>
 		<div th:replace="fragments/header :: header"></div>
 		
-		<div class="container">
+		<div class="container-sm " style='width: 450px; margin-top:25px; background-color: #13293E; padding: 15px; border-radius: 8px;'>
 			<form th:action="@{/turista/registrar}" method="post" th:object="${turista}" action="">
 				<div class="form-group">
-					<label for="idturista">ID:</label>
-					<input type="text" class="form-control" th:field="*{idTurista}"></input>
+					<label for="idturista" style='color:white;'>ID:</label>
+					<input style='margin-bottom:20px;' type="text" class="form-control" th:field="*{idTurista}"></input>
 					
 					<div class="form-group">
-						<label for="nombre">Nombre:</label>
-						<input type="text" class="form-control" th:field="*{nombreTurista}" id="nombre"></input>
+						<label for="nombre" style='color:white;'>Nombre:</label>
+						<input style='margin-bottom:20px;' type="text" class="form-control" th:field="*{nombreTurista}" id="nombre" ></input>
 						
 						<div class="alert alert-danger" th:if="${#fields.hasErrors('nombreTurista')}" 
 							th:errors="*{nombreTurista}">						
 						</div>
 						
-						<label for="apellido">Apellidos:</label>
-						<input type="text" class="form-control" th:field="*{apellidoTurista}" id="apellido"></input>
+						<label for="apellido" style='color:white;'>Apellidos:</label>
+						<input style='margin-bottom:20px;' type="text" class="form-control" th:field="*{apellidoTurista}" id="apellido"></input>
 						
 						<div class="alert alert-danger" th:if="${#fields.hasErrors('apellidoTurista')}" 
 							th:errors="*{apellidoTurista}">						
 						</div>
 						
 					
-						<label for="celular">Celular:</label>
-						<input type="text" class="form-control" th:field="*{celularTurista}" id="celular"></input>
+						<label for="celular" style='color:white;'>Celular:</label>
+						<input style='margin-bottom:20px;' type="text" class="form-control" th:field="*{celularTurista}" id="celular"></input>
 						
 						<div class="alert alert-danger" th:if="${#fields.hasErrors('celularTurista')}" 
 							th:errors="*{celularTurista}">						
 						</div>
 						
-						<label for="direccion">Direccion:</label>
-						<input type="text" class="form-control" th:field="*{direccionTurista}" id="direccion"></input>
+						<label for="direccion" style='color:white;'>Direccion:</label>
+						<input style='margin-bottom:20px;' type="text" class="form-control" th:field="*{direccionTurista}" id="direccion"></input>
 						
 						<div class="alert alert-danger" th:if="${#fields.hasErrors('direccionTurista')}" 
 							th:errors="*{direccionTurista}">						
 						</div>
 						
-						<label for="dni">DNI:</label>
-						<input type="text" class="form-control" th:field="*{dniTurista}" id="dni"></input>
+						<label for="dni" style='color:white;'>DNI:</label>
+						<input style='margin-bottom:20px;' type="text" class="form-control" th:field="*{dniTurista}" id="dni"></input>
 						
 						<div class="alert alert-danger" th:if="${#fields.hasErrors('dniTurista')}" 
 							th:errors="*{dniTurista}">						
 						</div>
 						
-						<label for="email">Email:</label>
-						<input type="text" class="form-control" th:field="*{emailTurista}" id="email"></input>
+						<label for="email" style='color:white;'>Email:</label>
+						<input style='margin-bottom:20px;' type="text" class="form-control" th:field="*{emailTurista}" id="email"></input>
 						
 						<div class="alert alert-danger" th:if="${#fields.hasErrors('emailTurista')}" 
 							th:errors="*{emailTurista}">						
@@ -74,8 +74,8 @@
 				</div>
 				</div>
 				
-				<button type="submit" class="btn btn-primary">Aceptar</button>
-				<a href="/turista/listar" class="btn btn-danger">Cancelar</a>
+				<button type="submit" class="btn btn-primary" style='margin-top:25px'>Aceptar</button>
+				<a href="/turista/listar" class="btn btn-danger" style='margin-top:25px'>Cancelar</a>
 				
 			</form>
 		</div>

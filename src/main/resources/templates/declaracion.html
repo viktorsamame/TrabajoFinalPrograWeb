@@ -21,22 +21,22 @@
 	<body>
 		<div th:replace="fragments/header :: header"></div>
 		
-		<div class="container">
+		<div class="container" style='width: 450px; margin-top:25px; background-color: #13293E; padding: 15px; border-radius: 8px;'>
 			<form th:action="@{/declaracion/registrar}" method="post" th:object="${declaracion}">
 				<div class="form-group">
-				<label for="iddeclaracion">ID:</label>
-					<input type="text" class="form-control" th:field="*{idDeclaracion}"></input>
+				<label for="iddeclaracion" style='color:white;'>ID:</label>
+					<input style='margin-bottom:20px;' type="text" class="form-control" th:field="*{idDeclaracion}"></input>
 					
 					<div class="form-group">
-						<label for="juramento">Juramento:</label>
-						<input type="text" class="form-control" th:field="*{juramento}" id="juramento"></input>
+						<label for="juramento" style='color:white;'>Juramento:</label>
+						<input style='margin-bottom:20px;' type="text" class="form-control" th:field="*{juramento}" id="juramento"></input>
 						
 						<div class="alert alert-danger" th:if="${#fields.hasErrors('juramento')}" 
 							th:errors="*{juramento}">						
 						</div>
 						
-						<label for="fechaDeclaracion">FECHA :</label>
-						<input type="date" class="form-control" th:field="*{fechaDeclaracion}" id="fechaDeclaracion"></input>
+						<label for="fechaDeclaracion" style='color:white;'>FECHA :</label>
+						<input style='margin-bottom:20px;' type="date" class="form-control" th:field="*{fechaDeclaracion}" id="fechaDeclaracion"></input>
 					
 						<div class="alert alert-danger" th:if="${#fields.hasErrors('fechaDeclaracion')}" 
 							th:errors="*{fechaDeclaracion}">
@@ -46,8 +46,8 @@
 				
 				</div>
 				
-				<button type="submit" class="btn btn-primary">Aceptar</button>
-				<a href="/declaracion/listar" class="btn btn-danger">Cancelar</a>
+				<button type="submit" class="btn btn-primary" style='margin-top:25px'>Aceptar</button>
+				<a href="/declaracion/listar" class="btn btn-danger" style='margin-top:25px'>Cancelar</a>
 				
 			</form>
 		</div>

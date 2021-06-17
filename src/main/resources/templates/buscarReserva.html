@@ -24,17 +24,17 @@
 	<body>
 		<div th:replace="fragments/header :: header"></div>
 		
-		<div class="container-fluid">
+		<div class="container-sm">
 			<div class="row clearfix">
 				
 				<h1 class='text-center'>Buscar Reserva</h1>
 				
-				<form th:action="@{/reserva/buscar}" method="post" th:object="${reserva}">
+				<form th:action="@{/reserva/buscar}" method="post" th:object="${reserva}" style='width: 450px; margin-bottom: 25px;'>
 					<div class="form-group">
 						<div class="col-sm-12">
 							<input 	type="text" class="form-control" th:field="*{nombreReserva}" id="res"
 									placeholder="Ingrese dato a buscar por Nombre de reserva"></input>							
-							<div align="left">
+							<div align="left" style='margin-top:25px'>
 								<button type="submit" class="btn btn-danger">Buscar</button>
 								<a href="/reserva/listar" class="btn btn-dark">Cancelar</a>
 							</div>							

@@ -23,17 +23,17 @@
 	<body>
 		<div th:replace="fragments/header :: header"></div>
 		
-		<div class="container-fluid">
+		<div class="container-sm">
 			<div class="row clearfix">
 				
 				<h1 class='text-center'>Buscar Paquete</h1>
 				
-				<form th:action="@{/paquete/buscar}" method="post" th:object="${paquete}">
+				<form th:action="@{/paquete/buscar}" method="post" th:object="${paquete}" style='width: 450px; margin-bottom: 25px;'>
 					<div class="form-group">
 						<div class="col-sm-12">
 							<input 	type="text" class="form-control" th:field="*{nombrePaquete}" id="paq"
 									placeholder="Ingrese dato a buscar por Nombre"></input>							
-							<div align="left">
+							<div align="left" style='margin-top:25px'>
 								<button type="submit" class="btn btn-danger">Buscar</button>
 								<a href="/paquete/listar" class="btn btn-dark">Cancelar</a>
 							</div>							

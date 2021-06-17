@@ -1,0 +1,391 @@
+
+.nav-link:hover{
+    color: #e47e88 !important;
+
+}
+
+.section-hero{
+    padding: 200px 0;
+    background-image: url(../Turismo.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    z-index: -10;
+}
+
+.section-hero::after{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: .7;
+}
+
+.box-text{
+    
+    color: #fff;
+}
+
+.box-text span{
+    text-decoration: underline;
+}
+/*BOTONES*/
+.btn-action{
+    border:none;
+    background-color: #2ecc71 !important;
+  
+}
+
+.btn-action:hover{
+    background-color: #27ae60 !important;
+}
+
+.btn-more{
+    background-color: transparent;
+    color: #fff;
+    border-color: #fff;
+
+}
+
+
+
+/*BOX INFO*/
+.info-container{
+   
+
+}
+.box-info{
+ 
+    position: relative;
+    padding: 60px 40px;
+    color: #fff;
+    overflow: hidden;
+}
+
+
+.box-info-programs{
+    background-image: url("../imagenes/Turismo.jpg");
+    position: center center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -10;
+    transition: .5s;
+    
+}
+
+.box-info-programs::after{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(63,144,201,0.89);
+
+}
+
+
+/*Afford*/
+.box-info-afford{
+    background-image: url(images/boxes-img-2.jpg);
+    position: center center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -10;
+    transition: .5s;
+}
+
+.box-info-afford::after{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(245,165,12,0.89);
+}
+
+/*Certification box*/
+.box-info-certification{
+    background-image: url(images/boxes-img-3.jpeg);
+    position: center center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -10;
+    transition: .5s;
+}
+
+.box-info-certification::after{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(244,52,61,0.89);
+}
+/*INTRO*/
+
+
+/*TOUR*/
+.video{
+    background-image: url(images/tour-bg.jpg);
+    width: auto;
+    height: 400px;
+    overflow: hidden;
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 10px #2d3436;
+}
+
+.video::after{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: .6;
+}
+
+.video-link{
+    position: absolute;
+    border-radius: 50%;
+    z-index: 10;
+    transition: .5s;
+}
+
+.play-button{
+    width: 120px;
+    position: relative;
+    border-radius: 50%;
+}
+.btn-tour{
+    border:none;
+    background-color: #2ecc71 !important;
+    color:#fff;
+}
+
+.btn-tour:hover{
+    background-color: #27ae60 !important;
+    color: #fff;
+}
+
+.tour{
+    background-color: #f5f5f5;
+    padding: 50px;
+}
+.span-video{
+    letter-spacing: .5px;
+    text-transform: uppercase;
+}
+
+/*NAV TABS*/
+.nav-latest-news{
+   margin: 0 auto;
+}
+
+/*STATICS*/
+.statics{
+    background-image: linear-gradient(to left,#EB3349,#F45C43 );
+    color: #fff;
+    text-transform: uppercase;
+}
+
+/*BLOG*/
+.blog{
+    background-color: #f5f5f5;
+    padding: 50px;
+}
+.avatar{
+    width: 80px !important;
+    border: 2px solid #fff;
+    position: relative;
+    top: -30px;
+    left: 30px;
+}
+.img-blog{
+    position: relative;
+    overflow: hidden;
+    
+    
+}
+
+.img-blog::after{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color:rgba(219,84,97,0.9);
+    opacity: .7;
+    top: 100%;
+    transition: all .4s;
+    
+}
+
+.img-blog:hover::after{
+    top: 0;
+}
+
+/*DIVIDER*/
+.divider-text{
+    z-index: 10;
+    color: white;
+}
+.divider{
+    background-image: url(images/divider-bg.jpg);
+    width: 100%;
+    height: 305px;
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+
+    
+}
+
+.divider::after{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    top: 0;
+    left: 0;
+    position: absolute;
+    opacity: .9;
+}
+
+/*SLIDER*/
+
+.h2-testimonial {
+	color: #333;
+	text-align: center;
+	text-transform: uppercase;
+	font-family: "Roboto", sans-serif;
+	font-weight: bold;
+	position: relative;
+	margin: 25px 0 50px;
+}
+.h2-testimonial::after {
+	content: "";
+	width: 100px;
+	position: absolute;
+	margin: 0 auto;
+	height: 3px;
+	background: #ffdc12;
+	left: 0;
+	right: 0;
+	bottom: -10px;
+}
+.carousel {
+	width: 650px;
+	margin: 0 auto;
+	padding-bottom: 50px;
+}
+.carousel .item {
+	color: #999;
+	font-size: 14px;
+    text-align: center;
+	overflow: hidden;
+    min-height: 340px;
+}
+.carousel .item a {
+	color: #eb7245;
+}
+.carousel .img-box {
+	width: 145px;
+	height: 145px;
+	margin: 0 auto;
+	border-radius: 50%;
+}
+.carousel .img-box img {
+	width: 100%;
+	height: 100%;
+	display: block;
+	border-radius: 50%;
+}
+.carousel .testimonial {	
+	padding: 30px 0 10px;
+}
+.carousel .overview {	
+	text-align: center;
+	padding-bottom: 5px;
+}
+.carousel .overview b {
+	color: #333;
+	font-size: 15px;
+	text-transform: uppercase;
+	display: block;	
+	padding-bottom: 5px;
+}
+.carousel .star-rating i {
+	font-size: 18px;
+	color: #ffdc12;
+}
+.carousel .carousel-control {
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+    background: #999;
+    text-shadow: none;
+	top: 4px;
+}
+.carousel-control i {
+	font-size: 20px;
+	margin-right: 2px;
+}
+.carousel-control.left {
+	left: auto;
+	right: 40px;
+}
+.carousel-control.right i {
+	margin-right: -2px;
+}
+.carousel .carousel-indicators {
+	bottom: 15px;
+}
+.carousel-indicators li, .carousel-indicators li.active {
+	width: 11px;
+	height: 11px;
+	margin: 1px 5px;
+	border-radius: 50%;
+}
+.carousel-indicators li {	
+	background: #e2e2e2;
+	border-color: transparent;
+}
+.carousel-indicators li.active {
+	border: none;
+	background: #888;		
+}
+
+/*Footer*/
+.footer{
+    width: 100%;
+    background-color: #111111;
+}
+
+.text-footer{
+    color:white;
+}
+
+
