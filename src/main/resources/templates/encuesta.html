@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+	
+	<head>
+		<meta charset="UTF-8"></meta>
+		<title>Encuesta</title>
+		
+		<script type="text/javascript"
+				src="ajax.aspnetcdn.com/ajax/jquery.validate/1.16.0/jquery.validate.js">
+		</script>
+		
+		<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+	
+	</head>
+	
+	<body>
+		<div th:replace="fragments/header2 :: header"></div>
+		
+		<div class="container" style='width: 450px; margin-top:25px; background-color: #13293E; padding: 15px; border-radius: 8px;'>
+			<form th:action="@{/encuesta/registrar}" method="post" th:object="${encuesta}">
+				<div class="form-group">
+				<label for="idencuesta" style='color:white;'>ID:</label>
+					<input style='margin-bottom:20px;' type="text" class="form-control" th:field="*{idEncuesta}"></input>
+					
+					<label style='color:white;' for="turista" class= "col-sm-2 col-form-label">Turista:</label>
+					<select class="form-control" th:field="*{turista.idTurista}"> 
+						<option th:each= "t:${listaTuristas}" th:value="${t.idTurista}"
+								th:text="${t.nombreTurista}"
+							 	th:selected="(${t.idTurista} == *{turista.idTurista})">
+						</option>
+					</select>
+					
+					<div class="form-group">
+						
+						
+						<label for="satisfaccion" style='color:white;'>¿Cuánto califica su experiencia en la plataforma web?</label>
+						<input style='margin-bottom:20px;' type="number"  min="1" max="5" class="form-control" th:field="*{satisfaccion}" id="satisfaccion"></input>
+						<div class="alert alert-danger" th:if="${#fields.hasErrors('satisfaccion')}" 
+							th:errors="*{satisfaccion}">						
+						</div>	
+						
+						
+						<label for="comentario" style='color:white;'>Déjanos un comentario</label>
+						<input style='margin-bottom:20px;' type="text" class="form-control" th:field="*{comentario}" id="comentario"></input>
+						<div class="alert alert-danger" th:if="${#fields.hasErrors('comentario')}" 
+							th:errors="*{comentario}">						
+						</div>	
+											
+					</div>
+				
+				</div>
+				
+				<button type="submit" class="btn btn-primary"  style='margin-top:25px;background-color:#F50C33'>Aceptar</button>
+				<a href="/encuesta/listar" class="btn btn-danger"  style='margin-top:25px;background-color:#F6F6F6; color:#000000'>Cancelar</a>
+				
+			</form>
+		</div>
+		
+		<div th:replace="fragments/footer :: footer"></div>
+					<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+		
+	</body>
+	
+</html>
